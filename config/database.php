@@ -94,6 +94,21 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'pgsql_phpunit' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('PHPUNIT_DB_HOST', env('DB_HOST', '127.0.0.1')),
+            'port' => env('PHPUNIT_DB_PORT', env('DB_PORT', '5432')),
+            'database' => env('PHPUNIT_DB_DATABASE', env('DB_DATABASE', 'forge')),
+            'username' => env('PHPUNIT_DB_USERNAME', env('DB_USERNAME', 'forge')),
+            'password' => env('PHPUNIT_DB_PASSWORD', env('DB_PASSWORD', '')),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DB_URL'),

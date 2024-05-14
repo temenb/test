@@ -18,6 +18,9 @@ class ProductController extends Controller
         array_shift($lines);
         $alreadyExists = [];
         foreach ($lines as $line) {
+            if (empty(trim($line))) {
+                continue;
+            }
             $data = str_getcsv($line);
             $product = Product::where(['sku' => $data[0], 'ean' => $data[2]])->first();
             if ($product) {
