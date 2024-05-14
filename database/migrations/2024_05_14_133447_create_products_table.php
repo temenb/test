@@ -14,8 +14,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('sku');
-            $table->string('title', Product::EAN_LENGTH);
+            $table->string('sku')->unique();
+            $table->string('title');
+            $table->string('ean', Product::EAN_LENGTH)->unique();
             $table->boolean('uk_only');
             $table->timestamps();
         });
