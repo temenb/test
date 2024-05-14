@@ -9,3 +9,7 @@ cp docker/containers/nginx/config/site.conf.dist docker/containers/nginx/config/
 cp vite.config.js.dist vite.config.js
 
 docker compose up -d
+
+./docker/connect_php.sh
+
+php artisan migrate
